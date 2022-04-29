@@ -62,7 +62,6 @@
       margin-top: auto;
       margin-bottom: auto;
       border: var(--color-primary) solid 1px;
-      border-radius: var(--border-radius);
 
       & > form {
         height: 43px;
@@ -71,10 +70,11 @@
           position: absolute;
           font-size: 1.3rem;
           margin-top: 12px;
-          margin-left: 12px;
+          margin-left: 14px;
           margin-right: 12px;
         }
 
+        // TODO: the rgba() background color values should use variables
         input {
           padding: 8px;
           padding-left: 44px;
@@ -83,10 +83,17 @@
           border: none;
           outline: none;
           color: var(--text-primary);
-          background-color: var(--bg-color-primary);
-          border-radius: var(--border-radius);
+          background-color: rgba(255,255,255, 0.5);
+          border-radius: 99999px;
           box-sizing: border-box;
           width: 100%;
+          transition: all 0.2s linear;
+        }
+        input:hover {
+          background-color: rgba(255,255,255, 0.6);
+        }
+        input:active, input:focus {
+          background-color: rgba(255,255,255, 0.9);
         }
       }
     }
